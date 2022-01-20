@@ -1,6 +1,6 @@
 # sudo loadkeys si
-xmodmap ~/.config/zsh/.xmodmaprc
-xcape -e '#66=Escape'
+# xmodmap ~/.config/zsh/.xmodmaprc
+# xcape -e '#66=Escape'
 
 # Profile file. Runs on login. Environmental variables are set here.
 
