@@ -8,6 +8,10 @@
     ~/.config:
       recursive: true
 
+- create:
+    - ~/.config/zsh
+    - ~/.config/nvim
+
 
 - link:
     ~/.zshenv: zsh/zshenv

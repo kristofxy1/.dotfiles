@@ -1,6 +1,6 @@
 # sudo loadkeys si
-# xmodmap ~/.xmodmaprc
-# xcape -e '#66=Escape'
+xmodmap ~/.config/zsh/.xmodmaprc
+xcape -e '#66=Escape'
 
 # Profile file. Runs on login. Environmental variables are set here.
 
@@ -9,4 +9,4 @@ export EDITOR="nvim"
 export BROWSER="firefox"
 
 # ~/ Clean up:
-export ZDOTDIR="$HOME/.dotfiles/zsh"
+export ZDOTDIR="$HOME/.config/zsh"
