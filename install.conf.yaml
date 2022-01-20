@@ -27,4 +27,10 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - [chsh -s $(which zsh), Making zsh the default shell]
+    - [sudo apt install setxbmap, apt - setxbmap]
+    - [sudo apt install xcape, apt - xcape]
+    - [sudo pacman -Sy xcape, pacman - xcape]
+    - [sudo pacman -Sy setxbmap, pacman - setxbmap]
+    - [sudo pacman -Sy zsh, pacman - zsh]
+    - [sudo apt install zsh, apt - zsh]
+    - [sudo chsh -s $(which zsh), Making zsh the default shell]
