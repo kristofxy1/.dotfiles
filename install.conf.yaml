@@ -18,7 +18,7 @@
     ~/.config/zsh/oh-my-zsh: zsh/oh-my-zsh
     ~/.config/nvim/init.vim: init.vim
     ~/.config/zsh/.xmodmaprc: xmodmaprc
-    ~/.config/zsh/.aliasrc: aliasrc
+    ~/.config/zsh/.aliasrc: zsh/aliasrc
 
 
 - create:
