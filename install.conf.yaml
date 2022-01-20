@@ -4,14 +4,29 @@
 
 - clean: ['~']
 
+- clean:
+    ~/.config:
+      recursive: true
+
+
 - link:
-    ~/.zshrc: zsh/zshrc
     ~/.zshenv: zsh/zshenv
-    ~/.config/nvim: init.vim
+    ~/.config/zsh/.zshrc: zsh/zshrc
+    ~/.config/zsh/.p10k.zsh: zsh/p10k.zsh
+    ~/.config/zsh/zsh-syntax-highlighting: zsh/zsh-syntax-highlighting
+    ~/.config/zsh/powerlevel10k: zsh/powerlevel10k
+    ~/.config/zsh/oh-my-zsh: zsh/oh-my-zsh
+    ~/.config/nvim/init.vim: init.vim
+    ~/.config/zsh/.xmodmaprc: xmodmaprc
+    ~/.config/zsh/.aliasrc: aliasrc
+
 
 - create:
     - ~/downloads
     - ~/.vim/undo-history
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
+    - [git submodule update --init --recursive, Installing submodules]
+    - sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    - [chsh -s $(which zsh), Making zsh the default shell]
+
