@@ -2,6 +2,10 @@
 # xmodmap ~/.config/zsh/.xmodmaprc
 # xcape -e '#66=Escape'
 
+setxkbmap -option ctrl:nocaps
+xcape -e 'Control_L=Escape' -t 175
+
+
 # Profile file. Runs on login. Environmental variables are set here.
 
 # Default programs:
