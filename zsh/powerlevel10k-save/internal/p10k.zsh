@@ -200,7 +200,11 @@ function _p9k_read_word() {
 }
 
 function _p9k_fetch_cwd() {
-  _p9k__cwd=${(g:oce:)${(%):-%/}}
+  if [[ $PWD == /* && $PWD -ef . ]]; then
+    _p9k__cwd=$PWD
+  else
+    _p9k__cwd=${${${:-.}:a}:-.}
+  fi
   _p9k__cwd_a=${${_p9k__cwd:A}:-.}
 
   case $_p9k__cwd in
@@ -4220,7 +4224,11 @@ prompt_virtualenv() {
     msg="${_p9k__ret//\%/%%} "
   fi
   local v=${VIRTUAL_ENV:t}
-  [[ $v == $~_POWERLEVEL9K_VIRTUALENV_GENERIC_NAMES ]] && v=${VIRTUAL_ENV:h:t}
+  if [[ $VIRTUAL_ENV_PROMPT == '('?*') ' && $VIRTUAL_ENV_PROMPT != "($v) " ]]; then
+    v=$VIRTUAL_ENV_PROMPT[2,-3]
+  elif [[ $v == $~_POWERLEVEL9K_VIRTUALENV_GENERIC_NAMES ]]; then
+    v=${VIRTUAL_ENV:h:t}
+  fi
   msg+="$_POWERLEVEL9K_VIRTUALENV_LEFT_DELIMITER${v//\%/%%}$_POWERLEVEL9K_VIRTUALENV_RIGHT_DELIMITER"
   case $_POWERLEVEL9K_VIRTUALENV_SHOW_WITH_PYENV in
     false)
@@ -8227,14 +8235,17 @@ _p9k_init_ssh() {
 }
 
 _p9k_init_toolbox() {
-  [[ -z $P9K_TOOLBOX_NAME  &&
-     -e /run/.toolboxenv   &&
-     -f /run/.containerenv &&
-     -r /run/.containerenv ]] || return 0
-  local name=(${(Q)${${(@M)${(f)"$(</run/.containerenv)"}:#name=*}#name=}})
-  (( ${#name} == 1 )) || return 0
-  [[ -n ${name[1]} ]] || return 0
-  typeset -g P9K_TOOLBOX_NAME=${name[1]}
+  [[ -z $P9K_TOOLBOX_NAME ]] || return 0
+  if [[ -f /run/.containerenv && -r /run/.containerenv ]]; then
+    local name=(${(Q)${${(@M)${(f)"$(</run/.containerenv)"}:#name=*}#name=}})
+    [[ ${#name} -eq 1 && -n ${name[1]} ]] || return 0
+    typeset -g P9K_TOOLBOX_NAME=${name[1]}
+  elif [[ -n $DISTROBOX_ENTER_PATH && -n $NAME ]]; then
+    local name=${(%):-%m}
+    if [[ $name == $NAME* ]]; then
+      typeset -g P9K_TOOLBOX_NAME=$name
+    fi
+  fi
 }
 
 _p9k_must_init() {
@@ -8246,7 +8257,7 @@ _p9k_must_init() {
     [[ $sig == $_p9k__param_sig ]] && return 1
     _p9k_deinit
   fi
-  _p9k__param_pat=$'v131\1'${(q)ZSH_VERSION}$'\1'${(q)ZSH_PATCHLEVEL}$'\1'
+  _p9k__param_pat=$'v132\1'${(q)ZSH_VERSION}$'\1'${(q)ZSH_PATCHLEVEL}$'\1'
   _p9k__param_pat+=$__p9k_force_term_shell_integration$'\1'
   _p9k__param_pat+=$'${#parameters[(I)POWERLEVEL9K_*]}\1${(%):-%n%#}\1$GITSTATUS_LOG_LEVEL\1'
   _p9k__param_pat+=$'$GITSTATUS_ENABLE_LOGGING\1$GITSTATUS_DAEMON\1$GITSTATUS_NUM_THREADS\1'
@@ -8373,6 +8384,7 @@ function _p9k_init_cacheable() {
           *void*)                  _p9k_set_os Linux LINUX_VOID_ICON;;
           *artix*)                 _p9k_set_os Linux LINUX_ARTIX_ICON;;
           *rhel*)                  _p9k_set_os Linux LINUX_RHEL_ICON;;
+          amzn)                    _p9k_set_os Linux LINUX_AMZN_ICON;;
           *)                       _p9k_set_os Linux LINUX_ICON;;
         esac
         ;;
