@@ -13,9 +13,9 @@
     ~/.zshenv: zsh/zshenv
     ~/.config/zsh/.zshrc: zsh/zshrc
     ~/.config/zsh/.p10k.zsh: zsh/p10k.zsh
-    ~/.config/zsh/zsh-syntax-highlighting: zsh/zsh-syntax-highlighting
-    ~/.config/zsh/powerlevel10k: zsh/powerlevel10k
-    ~/.config/zsh/oh-my-zsh: zsh/oh-my-zsh
+    ~/.config/zsh/zsh-syntax-highlighting: zsh/plugins/zsh-syntax-highlighting
+    ~/.config/zsh/powerlevel10k: zsh/plugins/powerlevel10k
+    ~/.config/zsh/oh-my-zsh: zsh/plugins/oh-my-zsh
     ~/.config/nvim/init.vim: init.vim
     ~/.config/zsh/.xmodmaprc: xmodmaprc
     ~/.config/zsh/.aliasrc: zsh/aliasrc
