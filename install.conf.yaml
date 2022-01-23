@@ -23,7 +23,4 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - command: sudo ./.dotfiles/apps.sh
-      stdout: true
-      quiet: true
     - [chsh -s `which zsh`, Making zsh the default shell]
