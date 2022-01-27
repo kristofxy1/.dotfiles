@@ -20,6 +20,8 @@
     ~/.config/zsh/.xmodmaprc: xmodmaprc
     ~/.config/zsh/.aliasrc: zsh/aliasrc
 
+- create:
+    - ~/Programiranje/python
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
