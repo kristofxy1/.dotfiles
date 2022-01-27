@@ -1,5 +1,5 @@
 alias pycharm='~/.pycharm/bin/pycharm.sh'
 alias ls='ls --color=auto'
-alias pyd='cd /home/kristof/Programiranje/python'
+alias pyd='cd ~/Programiranje/python'
 alias si='sudo loadkeys si'
 
