@@ -20,6 +20,7 @@
     ~/.vimrc: init.vim
     ~/.config/zsh/.xmodmaprc: xmodmaprc
     ~/.config/zsh/.aliasrc: zsh/aliasrc
+    ~/.tmux.conf: tmux.conf
 
 
 - shell:
