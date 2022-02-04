@@ -1,5 +1,25 @@
-alias pycharm='~/.pycharm/bin/pycharm.sh'
+# Use colors in coreutils utilities output
 alias ls='ls --color=auto'
+alias grep='grep --color'
+
+
+# Aliases to protect against overwriting
+alias cp='cp -i'
+alias mv='mv -i'
+
+# git related aliases
+alias gag='git exec ag'
+
+# Update dotfiles
+dfu() {
+    (
+            cd ~/.dotfiles && git pull --ff-only && ./install -q
+                
+    )
+    
+}
+
+alias pycharm='~/.pycharm/bin/pycharm.sh'
 alias pyd='cd ~/Programiranje/python'
 alias si='sudo loadkeys si'
 alias token="pbcopy < ~/.token"
