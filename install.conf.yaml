@@ -21,7 +21,6 @@
     ~/.config/zsh/.xmodmaprc: xmodmaprc
     ~/.config/zsh/.aliasrc: zsh/aliasrc
     ~/.tmux.conf: tmux.conf
-    ~/.token: token
 
 
 - shell:
