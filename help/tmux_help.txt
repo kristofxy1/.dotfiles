@@ -1,0 +1,24 @@
+# Custom binds
+- <C-a> - prefix (used letter P)
+- <P-R> - reload
+- <P-:> - command promopt
+- <P-r> - refresh client
+- <P-L> - clear history
+## moving betwen windows and panes
+- <P-space> - next window
+- <P-bspace> - previous window
+- <P-enter> - next layout - different panes configuration
+- <P-v> - vertical split
+- <P-s> - horizontal split
+- <P-hjkl> - move between panes
+- <M-#> - move to window #
+- <C-hl> - move previous/next window
+- <M-hjkl> - move between panes
+- <M-q> - kill pane
+- <P-a> - last pane
+- <P-q> - display panes (numbers)
+- <P-c> - new window
+- <P-t> - next window
+- <P-T> - previous window
+## copy mode
+- <P-č> enter copy mode
