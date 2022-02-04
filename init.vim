@@ -39,7 +39,7 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'vim-airline/vim-airline'
 
 " to theme a status line
-" Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline-themes'
 
 " for snippets
 Plug 'sirver/ultisnips'
@@ -65,6 +65,9 @@ vmap <C- > <Plug>NERDCommanterToggle<CR>gv
 let NERDTreeQuitOnOpen=1
 let g:NerdTreeMinimalUI=1
 nmap <F2> :NERDTreeToggle<CR>
+
+" powerline configuration
+let g:airline_powerline_fonts = 1
 
 " Windows
 " for changing to the buffer # leader+#
