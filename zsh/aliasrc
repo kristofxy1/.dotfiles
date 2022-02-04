@@ -4,6 +4,9 @@ alias pyd='cd ~/Programiranje/python'
 alias si='sudo loadkeys si'
 alias token="pbcopy < ~/.token"
 
+# alias for capslock remap
+alias remap="setxkbmap -option ctrl:nocaps; xcape -e 'Control_L=Escape' -t 175"
+
 # alias for clipboard copy
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'

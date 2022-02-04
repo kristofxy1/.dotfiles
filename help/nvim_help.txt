@@ -1,0 +1,66 @@
+Insert mode
+  - <C + h> - character before the cursor
+  - <C + w> - word before the cursor
+  - <C + j> - new line
+  - <C + t> - shift right
+  - <C + d> - shift left
+  - <C + n> - auto complete next match
+  - <C + p> - auto complete previous match
+  - <C + o> - out of insert mode for 1 command
+  - <C + r> - insert register
+
+Editing
+  - <J> - space + join line below
+  - <gJ> - join line below (without space)
+  - gwip - join paragraph below
+  - <C + r> - redo
+  - <(d,c...)(i,a...)(b,B,t)> - (delete,delete and insert...)(in,in and around...)((),{},<>)
+  - >> - move one line + shift
+  - << - move one line - shift
+  - >} - move paragraph + shift
+  - <} - move paragraph - shift
+
+Registers (")
+  - <:reg> - show all registers
+  - <"xp> - paste x register
+  - <"xy> - yank into x register
+  - <"+p> - paste system clipboard register
+  - <"+y> - yank into syste clipboard register
+
+Search
+  - </search> - to search
+  - <?search> - to search backwards
+  - <n> - next
+  - <N> - previous
+  - <:noh> - remove highlighting from searched 
+
+Tabs
+  - <:tabnew (file)> - open file in new tab
+  - <gt> - next tab
+  - <gT> - previous tab
+  - <#gt> - to the # numbered tab
+  - <:tabm[ove] #> - move tab to the number #
+  - <:tabc[lose] (#)> - close 
+
+Multiple files buffers = :b
+  - <:e[dit]> - open new buffer with file
+  - <:bp> - previous buffer
+  - <:bn> - next buffer
+  - <:b #> - buffer number #
+  - <:b file> - buffer with file file
+  - <:ls> - list all buffers (:buffers)
+  - <:sp[lit] (file)> - split (file)
+  - <:vs[plit] (file)> - vertical split (file)
+  - <:vert ba[ll]> - all buffers vertical
+  - <:tabs ba[ll]> - all buffers to tabs
+  - <C + ws> - split window 
+  - <C + w+> - incerase size of curent window
+  - <C + w-> - decerase size of current window
+  - <C + wv> - split window verticaly
+  - <C + ww> - switch window 
+  - <C + wg> - quit window
+  - <C + w=> - all window same size
+  - <C + h> - left window
+  - <C + j> - window down
+  - <C + k> - window up
+  - <C + l> - right window
