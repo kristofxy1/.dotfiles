@@ -48,14 +48,8 @@ call plug#end()
 " plugins end
 
 " make nvim colorful
-colorscheme gruvbox
-let g:airline_theme='gruvbox'
-
-if (has("termguicolors"))
-    set termguicolors
-endif
-
-lua require 'colorizer'.setup()
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'onedark'
 
 " NERDCommenter
 nmap <C- > <Plug>NERDCommenterToogle
@@ -66,15 +60,11 @@ let NERDTreeQuitOnOpen=1
 let g:NerdTreeMinimalUI=1
 nmap <F2> :NERDTreeToggle<CR>
 
-" powerline configuration
-let g:airline_powerline_fonts = 1
 
 " Windows
 " for changing to the buffer # leader+#
 " for changing to the n p buffer leader+n/p
 " for hjkl window leader+hjkl
-let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#tabline#fnamemode=':t'
 nmap <leader>1 :b 1<CR>
 nmap <leader>2 :b 2<CR>
 nmap <leader>3 :b 3<CR>

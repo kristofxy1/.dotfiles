@@ -5,13 +5,18 @@ sudo apt install -y zsh
 sudo apt install -y neovim
 sudo apt install -y ranger
 sudo apt install -y xclip xsel
+sudo apt install -y pip
+sudo apt install -y npm
+
+
 
 sudo pacman -Sy --noconfirm zsh
 sudo pacman -Sy --noconfirm ranger
 sudo pacman -Sy --noconfirm neovim
 sudo pacman -y --noconfigrm xclip xsel
+sudo pacman -Sy --noconfirm pip
+sudo pacman -Sy --noconfirm npm
 
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+pip install pynvim
 
 chsh -s `which zsh`

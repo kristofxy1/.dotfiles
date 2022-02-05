@@ -64,3 +64,5 @@ Multiple files buffers = :b
   - <C + j> - window down
   - <C + k> - window up
   - <C + l> - right window
+
+gf in normal - open link in new buffer
