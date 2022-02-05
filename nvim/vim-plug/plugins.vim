@@ -17,6 +17,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " themes
     Plug 'joshdick/onedark.vim'
     " Stable version of coc
-    " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " Airline plugin
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
+
