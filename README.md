@@ -13,3 +13,8 @@
         - sudo npm cache clean -f
         - sudo npm install -g npm
         - sudo n stable
+- if not working:
+    - curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
+    - sudo apt-get install -y nodejs
+- for installing nvim module
+    - npm install -g neovim
