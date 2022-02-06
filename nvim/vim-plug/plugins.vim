@@ -22,6 +22,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Airline plugin
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+    " ranger inside nvim
+    Plug 'kevinhawang91/rnvimr', {'do': 'make sync'}
+
 
 call plug#end()
 

@@ -8,5 +8,20 @@
     "snippets.ultisnips.directories": [
         "UltiSnips",
         "~/.config/nvim/utils/snips"
-    ]
+    ],
+
+    "explorer.width": 30,
+    "explorer.icon.enableNerdfont": true,
+    "explorer.previewAction.onHover": false,
+    "explorer.keyMappings.global": {
+        "<cr>": ["expandable?", "expand", "open"],
+        "v": "open:vsplit"
+    },
+    "explorer.git.icon.status.modified": "",
+    "explorer.git.icon.status.added": "",
+    "explorer.git.icon.status.deleted": "",
+    "explorer.git.icon.status.renamed": "",
+    "explorer.git.icon.status.ignored": "",
+    "explorer.git.icon.status.unmodified": " ",
+
 }
