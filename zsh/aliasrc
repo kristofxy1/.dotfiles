@@ -26,6 +26,7 @@ alias token="pbcopy < ~/.token"
 alias wifi="nmtui"
 alias battery="acpi"
 
+
 # alias for capslock remap
 alias remap="setxkbmap -option ctrl:nocaps; xcape -e 'Control_L=Escape' -t 175"
 
@@ -36,4 +37,9 @@ alias pbpaste='xclip -selection clipboard -o'
 # functions
 function help() {
     less ~/help/$1_help.txt
+}
+
+function brightness() {
+#    xrandr --output eDP-1 --brightness $2
+    brightnessctl -d "intel_backlight" set $1
 }

@@ -166,3 +166,7 @@ exec --no-startup-id compton -f
 # wallpaper
 exec_always feh --bg-fill $HOME/.config/i3/Wallpaper.jpg
 
+# bar
+bar {
+    status_command i3status
+}
