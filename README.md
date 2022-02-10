@@ -1,5 +1,5 @@
 # MY DOTFILES
-# Zsh config
+## Zsh config
 - ./install
 - install font MesloLGS NF Regluar.ttf
 - set default font for your terminal
@@ -18,3 +18,8 @@
     - sudo apt-get install -y nodejs
 - for installing nvim module
     - npm install -g neovim
+## i3
+- to start just install i3
+- for walpaper install feh
+- install lxappearance and configure in it
+

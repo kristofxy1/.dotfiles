@@ -23,6 +23,8 @@ alias pycharm='~/.pycharm/bin/pycharm.sh'
 alias pyd='cd ~/Programiranje/python'
 alias si='sudo loadkeys si'
 alias token="pbcopy < ~/.token"
+alias wifi="nmtui"
+alias battery="acpi"
 
 # alias for capslock remap
 alias remap="setxkbmap -option ctrl:nocaps; xcape -e 'Control_L=Escape' -t 175"

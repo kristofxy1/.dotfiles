@@ -28,6 +28,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     "Plug 'norcalli/nvim-colorizer.lua'
     "commentary
     Plug 'tpope/vim-commentary'
+    " startify
+    Plug 'mhinz/vim-startify'
+    " md reviev
+    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
 
 call plug#end()
 

@@ -22,6 +22,7 @@
     ~/.config/zsh/.aliasrc: zsh/aliasrc
     ~/.tmux.conf: tmux.conf
     ~/help: help
+    ~/.config/i3: i3
 
 
 - shell:
