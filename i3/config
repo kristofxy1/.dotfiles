@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # font
-font pango: MesloLGS NF Regular 14
+font pango: MesloLGS NF Regular 
 
 # thin borders
 hide_edge_borders both
