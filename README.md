@@ -22,4 +22,5 @@
 - to start just install i3
 - for walpaper install feh
 - install lxappearance and configure in it
+- install rofi
 

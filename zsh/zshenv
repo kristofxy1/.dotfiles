@@ -5,6 +5,8 @@
 setxkbmap -option ctrl:nocaps
 xcape -e 'Control_L=Escape' -t 175
 
+# makin si keyboard layout
+setxkbmap -layout si
 
 # Profile file. Runs on login. Environmental variables are set here.
 
