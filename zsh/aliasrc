@@ -25,6 +25,7 @@ alias si='sudo loadkeys si'
 alias token="pbcopy < ~/.token"
 alias wifi="nmtui"
 alias battery="acpi"
+alias audio="pavucontrol"
 
 
 # alias for capslock remap

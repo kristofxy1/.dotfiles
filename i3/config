@@ -168,5 +168,5 @@ exec_always feh --bg-fill $HOME/.config/i3/Wallpaper.jpg
 
 # bar
 bar {
-    status_command i3status
+   status_command i3status -c ~/.config/i3status/i3status.conf
 }
