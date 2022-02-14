@@ -44,3 +44,4 @@ function brightness() {
 #    xrandr --output eDP-1 --brightness $2
     brightnessctl -d "intel_backlight" set $1
 }
+
