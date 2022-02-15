@@ -174,4 +174,14 @@ bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+#cmus player controls
+bindsym $mod+Shift+p exec cmus-remote -u
+bindsym $mod+Shift+n exec cmus-remote -n
+bindsym $mod+Shift+b exec cmus-remote -r
+bindsym $mod+Shift+k exec cmus-remote -C vol +10%
+bindsym $mod+Shift+j exec cmus-remote -C vol -10%
+# bindsym $mod+Shift+p exec cmus-remote -u
+# bindsym $mod+Shift+p exec cmus-remote -u
+# bindsym $mod+Shift+p exec cmus-remote -u
 ############
