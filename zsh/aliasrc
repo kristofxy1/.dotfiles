@@ -26,6 +26,7 @@ alias token="pbcopy < ~/.token"
 alias wifi="nmtui"
 alias battery="acpi"
 alias audio="pavucontrol"
+alias sola='cd ~/Documents/sola'
 
 
 # alias for capslock remap

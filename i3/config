@@ -179,8 +179,8 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Shift+p exec cmus-remote -u
 bindsym $mod+Shift+n exec cmus-remote -n
 bindsym $mod+Shift+b exec cmus-remote -r
-bindsym $mod+Shift+k exec cmus-remote -C vol +10%
-bindsym $mod+Shift+j exec cmus-remote -C vol -10%
+# bindsym $mod+Shift+k exec cmus-remote -C vol +10%
+# bindsym $mod+Shift+j exec cmus-remote -C vol -10%
 # bindsym $mod+Shift+p exec cmus-remote -u
 # bindsym $mod+Shift+p exec cmus-remote -u
 # bindsym $mod+Shift+p exec cmus-remote -u
