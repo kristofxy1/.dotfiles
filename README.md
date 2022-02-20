@@ -23,4 +23,9 @@
 - for walpaper install feh
 - install lxappearance and configure in it
 - install rofi
+- for i3-gaps run :
+```sh
+sudo add-apt-repository ppa:regolith-linux/release
+sudo apt-get update
+```
 
