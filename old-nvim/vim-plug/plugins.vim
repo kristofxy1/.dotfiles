@@ -29,9 +29,9 @@ call plug#begin('~/.config/nvim-plug/plugged')
     "commentary
     Plug 'tpope/vim-commentary'
     " startify
-    Plug 'mhinz/vim-startify'
+    " Plug 'mhinz/vim-startify'
     " md reviev
-    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
+    " Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
 
 call plug#end()
 
