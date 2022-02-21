@@ -1,0 +1,20 @@
+terminal - xfce4-terminal
+screenshot - flameshot
+lockscreen - i3-lock
+appsearch menu - rofi (default dmenu)
+bar - i3status
+clipboard - clipit
+applet for network - network-manager-gnome (nm-applet)
+applet for bluetooth - blueman (blueman-applet)
+power manager - xfce4-power-manager
+
+audio - pavucontrol
+wifi - nmtui
+bluetooth - blueberry
+
+xbacklight
+pactl
+playerctl
+systemctl
+xcape
+setxbmap

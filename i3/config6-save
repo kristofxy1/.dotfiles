@@ -3,9 +3,11 @@
 ################################
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-# Set mod key (Mod1=<Alt>, Mod4=<Super>) 
-set $mod Mod4 
-#set default desktop layout (default is tiling)
+# Set mod key (Mod2=<Alt>, Mod4=<Super>)
+set $mod Mod4
+
+# ?????????????????????
+# set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
@@ -56,37 +58,19 @@ set $print_path ~/Pictures/Screenshots
 bindsym Print                      exec --no-startup-id flameshot gui -p $print_path
 bindsym $mod+Shift+Print --release exec --no-startup-id flameshot full -c -p $print_path
 
-################################
-## app starting keybindings
-################################
+# Media player controls
+bindsym XF86AudioPlay  exec playerctl play-pause
+bindsym XF86AudioNext  exec playerctl next
+bindsym XF86AudioPrev  exec playerctl previous
 
-bindsym $mod+Shift+f exec firefox
-
-################################
-## multimedia and screen brightness
-################################
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle 
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
-
-# Touchpad controls
-bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
-
-# Media player controls
-bindsym XF86AudioPlay  exec playerctl play-pause
-bindsym XF86AudioPause exec playerctl pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-
-#cmus player controls
-bindsym $mod+Shift+p exec cmus-remote -u
-bindsym $mod+Shift+n exec cmus-remote -n
-bindsym $mod+Shift+b exec cmus-remote -r
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 ################################
 ## Resize mode
@@ -107,7 +91,8 @@ mode "resize" {
     bindsym k resize shrink height 10 px or 10 ppt
     bindsym l resize grow width 10 px or 10 ppt
 
-    bindsym Lefj resize shrink width 10 px or 10 ppt bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Lefj resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
     bindsym Up resize shrink height 10 px or 10 ppt
     bindsym Right resize grow width 10 px or 10 ppt
 
@@ -235,7 +220,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9;  workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
 
 # Open applications on specific workspaces
-assign [class="Firefox"]         $ws2
+assign [class="firefox"]         $ws3
 
 # Open specific applications in floating mode
 for_window [title="File Transfer*"] floating enable
@@ -261,23 +246,23 @@ bar {
 
 
 ################################
-## System mode - shutdown, lock...
+## System mode shutdown lock ...
 ################################
 
 # exit i3
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # Set shut down, restart and locking features
-bindsym $mod+Escape mode "$mode_system"
+bindsym $mod+Shift+Escape mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3lock --color 475263
-    bindsym s exec --no-startup-id systemctl suspend
-    bindsym u exec --no-startup-id exit i3
-    bindsym e exec --no-startup-id exit i3
-    bindsym h exec --no-startup-id systemctl suspend-then-hibernate
-    bindsym r exec --no-startup-id reboot
-    bindsym Shift+s exec --no-startup-id shutdown now
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+    bindsym e exec --no-startup-id i3exit logout, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
 
     # exit system mode: "Enter" or "Escape"
     bindsym Return mode "default"
@@ -341,44 +326,4 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-################################
-## Startup actions
-################################
-
-# exec --no-startup-id albert
-# exec --no-startup-id mailspring
-exec --no-startup-id flameshot
-exec --no-startup-id nm-applet
-exec --no-startup-id redshift -l 41:-8 -t 5700:3600
-exec --no-startup-id clipit
-
-exec --no-startup-id nitrogen --restore; sleep 1; picom -C -b
-
-# Keyboard Remaps
-# exec --no-startup-id numlockx 
-# exec --no-startup-id setxkbmap -option caps:escape
-#exec --no-startup-id setxkbmap -option ctrl:nocaps
-#exec --no-startup-id xcape -e 'Control_L=Escape'
-exec --no-startup-id setxkbmap -option ctrl:nocaps
-exec --no-startup-id xcape -e 'Control_L=Escape' -t 175
-
-# slo keyboard layout
-exec --no-startup-id setxkbmap -layout si
-
-# Touchpad controls
-#bindsym XF86TouchpadToggle exec ~/.spells/i3wm/toggletouchpad.sh # toggle touchpad
-
-# Natural Scroll
-#exec_always --no-startup-id ~/.spells/i3wm/naturalScrollOn.sh
-#exec_always --no-startup-id ~/.spells/i3wm/natural_scroll.sh
-
-# Spiral layout
-#exec_always --no-startup-id ~/.spells/i3wm/alternating_layouts.py
-
-# others
-exec --no-startup-id xfce4-power-manager
-exec --no-startup-id blueman-applet
-exec --no-startup-id compton -f
-
-# wallpaper
-#exec_always feh --bg-fill /home/kristof/Pictures/wp2601081.jpg
+###############################################################################
