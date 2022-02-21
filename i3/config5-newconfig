@@ -1,8 +1,7 @@
 ################################
 ## Configuration for i3wm
 ################################
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
-
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!  
 # Set mod key (Mod1=<Alt>, Mod4=<Super>) 
 set $mod Mod4 
 #set default desktop layout (default is tiling)
@@ -391,3 +390,4 @@ exec --no-startup-id compton -f
 
 # wallpaper
 #exec_always feh --bg-fill /home/kristof/Pictures/wp2601081.jpg
+exec_always wal -i ~/.config/i3/Wallpaper_forest.jpeg
