@@ -7,6 +7,13 @@ clipboard - clipit
 applet for network - network-manager-gnome (nm-applet)
 applet for bluetooth - blueman (blueman-applet)
 power manager - xfce4-power-manager
+for changing to your wallpaper colour scheme - pywal
+    for installing:
+        pip3 install pywal
+gaps - i3gaps
+    for installing:
+        sudo add-apt-repository ppa:regolith-linux/release
+        sudo apt-get update
 
 audio - pavucontrol
 wifi - nmtui
