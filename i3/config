@@ -256,6 +256,7 @@ for_window [urgent=latest] focus
 
 bar {
     status_command i3status
+    position top
     colors {
         separator #268bd2
         background #002b36
@@ -390,4 +391,4 @@ exec --no-startup-id compton -f
 
 # wallpaper
 #exec_always feh --bg-fill /home/kristof/Pictures/wp2601081.jpg
-exec_always wal -i ~/.config/i3/Wallpaper_forest.jpeg
+#exec_always wal -i ~/.config/i3/Wallpaper_neon_city.jpeg

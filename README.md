@@ -28,4 +28,9 @@
 sudo add-apt-repository ppa:regolith-linux/release
 sudo apt-get update
 ```
+## alacritty
+- to install add ppa:
+```sh
+sudo add-apt-repository ppa:aslatter/ppa
+```
 

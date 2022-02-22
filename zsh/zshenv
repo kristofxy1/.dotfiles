@@ -16,3 +16,4 @@ export BROWSER="firefox"
 
 # ~/ Clean up:
 export ZDOTDIR="$HOME/.config/zsh"
+. "$HOME/.cargo/env"
