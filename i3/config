@@ -13,7 +13,7 @@ new_float normal
 
 # Hide borders
 hide_edge_borders none
-for_window [class="^.*"] border pixel 1 
+for_window [class="^.*"] border pixel 3 
 
 ################################
 ## basic configuration
@@ -28,10 +28,10 @@ font pango: MesloLGS NF Regular
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec alacritty
 
 # start a terminal with tmux
-bindsym $mod+Shift+Return exec xfce4-terminal -e 'tmux'
+bindsym $mod+Shift+Return exec alacritty -e 'tmux'
 
 # lock & autolock
 bindsym $mod+Shift+x exec i3lock --color 475263
@@ -391,4 +391,4 @@ exec --no-startup-id compton -f
 
 # wallpaper
 #exec_always feh --bg-fill /home/kristof/Pictures/wp2601081.jpg
-#exec_always wal -i ~/.config/i3/Wallpaper_neon_city.jpeg
+#exec_always wal -i ~/.config/i3/Wallpaper_forest.jpeg
