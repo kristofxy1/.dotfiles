@@ -16,7 +16,7 @@ sudo apt-get update
 # sudo apt install xfce4-power-manager 
 
 # installing - normal
-sudo apt install flameshot i3lock rofi i3status clipit blueman network-manager-gnome xfce4-power-manager 
+sudo apt install flameshot i3lock rofi i3status clipit blueman network-manager-gnome xfce4-power-manager compton 
 
 # installilng other programs
 # sudo apt install xbacklight

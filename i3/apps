@@ -19,6 +19,7 @@ gaps - i3-gaps
 audio - pavucontrol
 wifi - nmtui
 bluetooth - blueberry
+compton
 
 xbacklight
 pactl

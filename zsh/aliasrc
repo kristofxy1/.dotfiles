@@ -21,7 +21,7 @@ dfu() {
 
 alias pycharm='~/.pycharm/bin/pycharm.sh'
 alias pyd='cd ~/Programiranje/python'
-alias si='sudo loadkeys si'
+alias si='setxkbmap si'
 alias token="pbcopy < ~/.token"
 alias wifi="nmtui"
 alias battery="acpi"
