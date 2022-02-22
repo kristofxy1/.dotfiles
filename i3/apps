@@ -10,10 +10,11 @@ power manager - xfce4-power-manager
 for changing to your wallpaper colour scheme - pywal
     for installing:
         pip3 install pywal
-gaps - i3gaps
+gaps - i3-gaps
     for installing:
         sudo add-apt-repository ppa:regolith-linux/release
         sudo apt-get update
+        sudo apt install i3-gaps
 
 audio - pavucontrol
 wifi - nmtui
