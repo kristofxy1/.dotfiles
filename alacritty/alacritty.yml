@@ -1,0 +1,86 @@
+colors:
+  # Default colors
+  primary:
+    background: "#041014"
+    # background: "#2E3440"
+    foreground: "#D8DEE9"
+
+  # Normal colors
+  normal:
+    black: "#6a8590"
+    red: "#1f5666"
+    green: "#c92443"
+    yellow: "#368378"
+    blue: "#146696"
+    magenta: "#576b98"
+    cyan: "#c2629d"
+    white: "#98bfcf"
+
+  # Normal colors
+  bright:
+    black: "#041014"
+    red: "#1f5666"
+    green: "#c92443"
+    yellow: "#368378"
+    blue: "#146696"
+    magenta: "#576b98"
+    cyan: "#c2629d"
+    white: "#98bfcf"
+
+font:
+  normal:
+    family: "MesloLGS NF"
+    style: Regular
+  bold:
+    family: "MesloLGS NF"
+    style: Bold
+  italic:
+    family: "MesloLGS NF"
+    style: Italic
+  bold_italic:
+    family: "MesloLGS NF"
+    style: Bold Italic
+
+  # Point size
+  size: 12
+
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+
+window:
+  opacity: 0.8
+  padding:
+    x: 2
+    y: 2
+
+scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  history: 10000
+
+  # Number of lines the viewport will move for every line scrolled when
+  # scrollback is enabled (history > 0).
+  multiplier: 10
+
+# If `true`, bold text is drawn using the bright color variants.
+draw_bold_text_with_bright_colors: true
+
+selection:
+  semantic_escape_chars: ',│`|:"'' ()[]{}<>'
+  save_to_clipboard: true
+
+live_config_reload: true
+
+# key_bindings:
+  # - { key: V, mods: Control|Shift, action: Paste }
+  # - { key: C, mods: Control|Shift, action: Copy }
+  # - { key: Key0, mods: Control, action: ResetFontSize }
+  # - { key: Equals, mods: Control, action: IncreaseFontSize }
+  # - { key: Add, mods: Control, action: IncreaseFontSize }
+  # - { key: Subtract, mods: Control, action: DecreaseFontSize }
+  # - { key: Minus, mods: Control, action: DecreaseFontSize }
+  # - { key: N, mods: Control, action: SpawnNewInstance }

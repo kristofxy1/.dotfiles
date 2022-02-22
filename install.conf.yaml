@@ -23,6 +23,7 @@
     ~/.tmux.conf: tmux.conf
     ~/help: help
     ~/.config/i3: i3
+    ~/.config/alacritty: alacritty
 
 
 - shell:
