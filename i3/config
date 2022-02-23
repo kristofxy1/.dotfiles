@@ -1,8 +1,7 @@
 ################################
 ## Configuration for i3wm
 ################################
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!  
-# Set mod key (Mod1=<Alt>, Mod4=<Super>) 
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!  Set mod key (Mod1=<Alt>, Mod4=<Super>) 
 set $mod Mod4 
 #set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
@@ -28,10 +27,10 @@ font pango: MesloLGS NF Regular
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec --no-startup-id alacritty
 
 # start a terminal with tmux
-bindsym $mod+Shift+Return exec alacritty -e 'tmux'
+bindsym $mod+Shift+Return exec --no-startup-id alacritty -e 'tmux'
 
 # lock & autolock
 bindsym $mod+Shift+x exec i3lock --color 475263
@@ -47,8 +46,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # start program launcher
-bindsym Mod1+space exec --no-startup-id rofi -show combi
-bindsym $mod+d exec --no-startup-id rofi -show drun  
+bindsym Mod1+space exec --no-startup-d rofi -show combi
+bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons 
 
 # Printscreen
 set $print_path ~/Pictures/Screenshots
@@ -409,7 +408,7 @@ exec --no-startup-id setxkbmap -layout si
 #exec_always --no-startup-id ~/.spells/i3wm/natural_scroll.sh
 
 # Spiral layout
-exec_always --no-startup-id ~/.config/i3/alternating_layouts.py
+#exec_always --no-startup-id ~/.config/i3/alternating_layouts.py
 
 # others
 exec --no-startup-id xfce4-power-manager
@@ -417,5 +416,7 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id compton -f 
 
 # wallpaper
-exec feh --bg-fill ~/.config/i3/Wallpaper_nord_rocket.png
+exec --no-startup-id feh --bg-fill ~/.config/i3/Wallpaper_nord_rocket.png
 #exec_always wal -i ~/.config/i3/Wallpaper_forest.jpeg
+
+#exec ~/.config/i3/startup_script.sh

@@ -1,8 +1,7 @@
 ################################
 ## Configuration for i3wm
 ################################
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
-
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!  
 # Set mod key (Mod1=<Alt>, Mod4=<Super>) 
 set $mod Mod4 
 #set default desktop layout (default is tiling)
@@ -14,7 +13,7 @@ new_float normal
 
 # Hide borders
 hide_edge_borders none
-for_window [class="^.*"] border pixel 1 
+for_window [class="^.*"] border pixel 3 
 
 ################################
 ## basic configuration
@@ -29,10 +28,10 @@ font pango: MesloLGS NF Regular
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec alacritty
 
 # start a terminal with tmux
-bindsym $mod+Shift+Return exec xfce4-terminal -e 'tmux'
+bindsym $mod+Shift+Return exec alacritty -e 'tmux'
 
 # lock & autolock
 bindsym $mod+Shift+x exec i3lock --color 475263
@@ -256,17 +255,45 @@ for_window [urgent=latest] focus
 ################################
 
 bar {
-    status_command i3status
-    colors {
-        separator #268bd2
-        background #002b36
-        statusline #839496
-        focused_workspace #fdf6e3 #368378 #fdf6e3
-        active_workspace #fdf6e3 #368378 #fdf6e3
-        inactive_workspace #002b36 #586e75 #002b36
-        urgent_workspace #d33682 #c92443 #fdf6e3   
-    }
+# for adding output screen use xrandr
+# bar for big displays
+    output HDMI2
+    output DP2
+    output VGA-0
+    position top
+    font pango: MesloLGS NF Regular
+    tray_output none
+    status_command ~/.config/i3/bumblebee-status/bumblebee-status \
+    -m amixer cmus time date battery spacer \
+    -p interval=0.1s time.format="%H:%M:%S" date.format="%d. %m." spacer.text="Krištof Bučar" \
+    -t nord-powerline
 }
+
+bar {
+# display for laptop change XYX
+    output XYX
+    position top
+    font pango: MesloLGS NF Regular
+    tray_output none
+    status_command ~/.config/i3/bumblebee-status/bumblebee-status \
+    -m brightness amixer cmus time date battery \
+    -p interval=0.1s time.format="%H:%M:%S" date.format="%d. %m." spacer.text="Krištof Bučar" \
+    -t nord-powerline
+}
+
+# bar {
+#     status_command i3status
+#     position top
+#     colors {
+#         separator #268bd2
+#         background #002b36
+#         statusline #839496
+#         focused_workspace #fdf6e3 #368378 #fdf6e3
+#         active_workspace #fdf6e3 #368378 #fdf6e3
+#         inactive_workspace #002b36 #586e75 #002b36
+#         urgent_workspace #d33682 #c92443 #fdf6e3   
+#     }
+# }
 
 
 ################################
@@ -387,7 +414,9 @@ exec_always --no-startup-id ~/.config/i3/alternating_layouts.py
 # others
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id blueman-applet
-exec --no-startup-id compton -f
+exec --no-startup-id compton -f 
 
 # wallpaper
-#exec_always feh --bg-fill /home/kristof/Pictures/wp2601081.jpg
+#exec feh --bg-fill ~/.config/i3/Wallpaper_nord_rocket.png
+#exec_always wal -i ~/.config/i3/Wallpaper_forest.jpeg
+
