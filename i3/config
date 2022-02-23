@@ -255,11 +255,29 @@ for_window [urgent=latest] focus
 ################################
 
 bar {
+# for adding output screen use xrandr
+# bar for big displays
+    output HDMI2
+    output DP2
+    output VGA-0
     position top
+    font pango: MesloLGS NF Regular
     tray_output none
-    status_command bumblebee-status \
-    -m datetime memory cmus layout \
-    -p interval=0.1s datetime.format="%H:%M:%S" spacer.text="Krištof Bučar" \
+    status_command ~/.config/i3/bumblebee-status/bumblebee-status \
+    -m amixer cmus time date battery spacer \
+    -p interval=0.1s time.format="%H:%M:%S" date.format="%d. %m." spacer.text="Krištof Bučar" \
+    -t nord-powerline
+}
+
+bar {
+# display for laptop change XYX
+    output XYX
+    position top
+    font pango: MesloLGS NF Regular
+    tray_output none
+    status_command ~/.config/i3/bumblebee-status/bumblebee-status \
+    -m brightness amixer cmus time date battery \
+    -p interval=0.1s time.format="%H:%M:%S" date.format="%d. %m." spacer.text="Krištof Bučar" \
     -t nord-powerline
 }
 
@@ -396,8 +414,8 @@ exec_always --no-startup-id ~/.config/i3/alternating_layouts.py
 # others
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id blueman-applet
-exec --no-startup-id compton -f
+exec --no-startup-id compton -f 
 
 # wallpaper
-exec_always feh --bg-fill ~/.config/i3/Wallpaper.jpg
+exec feh --bg-fill ~/.config/i3/Wallpaper_nord_rocket.png
 #exec_always wal -i ~/.config/i3/Wallpaper_forest.jpeg
