@@ -418,4 +418,3 @@ exec --no-startup-id compton -f
 exec --no-startup-id feh --bg-fill ~/.config/i3/Wallpaper_nord_rocket.png
 #exec_always wal -i ~/.config/i3/Wallpaper_forest.jpeg
 
-exec --no-startup-id alacritty -e ~/.config/i3/startup_script.sh
