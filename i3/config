@@ -1,7 +1,7 @@
 ################################
 ## Configuration for i3wm ###############################
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!  Set mod key (Mod1=<Alt>, Mod4=<Super>) 
-set $mod Mod4 
+set $mod Mod1 
 #set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
 
@@ -25,13 +25,7 @@ font pango: MesloLGS NF Regular
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec --no-startup-id alacritty 
-
-# start a terminal with tmux
-bindsym $mod+Shift+Return exec --no-startup-id alacritty -e tmux
-
-# lock & autolock
+# lock 
 bindsym $mod+Shift+x exec i3lock --color 475263
 
 # kill focused window
@@ -44,7 +38,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # start program launcher
-bindsym Mod1+space exec --no-startup-id rofi -theme .config/i3/rofi/nord.rasi -show combi
+bindsym $mod+space exec --no-startup-id rofi -theme .config/i3/rofi/nord.rasi -show combi
 bindsym $mod+d exec --no-startup-id rofi -theme .config/i3/rofi/nord.rasi -show drun -show-icons
 
 # Printscreen
@@ -57,6 +51,13 @@ bindsym $mod+Shift+Print --release exec --no-startup-id flameshot full -c -p $pr
 ################################
 
 bindsym $mod+Shift+f exec firefox
+bindsym $mod+w exec firefox
+
+# start a terminal
+bindsym $mod+Return exec --no-startup-id alacritty 
+
+# start a terminal with tmux
+bindsym $mod+Shift+Return exec --no-startup-id alacritty -e tmux
 
 ################################
 ## multimedia and screen brightness
@@ -83,33 +84,6 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Shift+p exec cmus-remote -u
 bindsym $mod+Shift+n exec cmus-remote -n
 bindsym $mod+Shift+b exec cmus-remote -r
-
-################################
-## Resize mode
-################################
-
-bindsym $mod+r mode "resize"
-
-# resize not mode
-bindsym $mod+z resize shrink width 5 px or 5 ppt
-bindsym $mod+u resize grow height 5 px or 5 ppt
-bindsym $mod+i resize shrink height 5 px or 5 ppt
-bindsym $mod+o resize grow width 5 px or 5 ppa
-
-# resize window (you can also use the mouse for that)
-mode "resize" {
-    bindsym h resize shrink width 10 px or 10 ppt
-    bindsym j resize grow height 10 px or 10 ppt
-    bindsym k resize shrink height 10 px or 10 ppt
-    bindsym l resize grow width 10 px or 10 ppt
-
-    bindsym Lefj resize shrink width 10 px or 10 ppt bindsym Down resize grow height 10 px or 10 ppt
-    bindsym Up resize shrink height 10 px or 10 ppt
-    bindsym Right resize grow width 10 px or 10 ppt
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
 
 ################################
 ## Navigation bindings
@@ -150,16 +124,13 @@ bindsym $mod+v split v;exec notify-send 'tile vertically'
 bindsym $mod+q split toggle
 
 # change container layout (stacked, tabbed, toggle split, toggle fullscreen)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+t layout toggle split
 bindsym $mod+f fullscreen toggle
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Ctrl+space focus mode_toggle
 
 # toggle sticky
 bindsym $mod+Shift+s sticky toggle
@@ -301,6 +272,51 @@ bar {
 #     }
 # }
 
+################################
+## DIFFERENT MODES
+################################
+
+################################
+## Resize mode
+################################
+
+bindsym $mod+r mode "resize"
+
+# resize not mode
+bindsym $mod+z resize shrink width 5 px or 5 ppt
+bindsym $mod+u resize grow height 5 px or 5 ppt
+bindsym $mod+i resize shrink height 5 px or 5 ppt
+bindsym $mod+o resize grow width 5 px or 5 ppa
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
+
+    bindsym Left resize shrink width 10 px or 10 ppt bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+################################
+## window configuration mode
+################################
+set $mode_window window mode change: [n]ormal, [s]tacking, [t]abbed
+bindsym $mod+t mode "$mode_window"
+
+mode "$mode_window" {
+    bindsym s layout stacking, mode "default"
+    bindsym t layout tabbed, mode "default"
+    bindsym n layout toggle split, mode "default"
+
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
 
 ################################
 ## System mode - shutdown, lock...
@@ -439,3 +455,6 @@ exec --no-startup-id compton -f
 exec --no-startup-id feh --bg-fill ~/.config/i3/Wallpapers/Wallpaper_nord_rocket.png
 #exec_always wal -i ~/.config/i3/Wallpaper_forest.jpeg
 
+################################
+## try
+################################
