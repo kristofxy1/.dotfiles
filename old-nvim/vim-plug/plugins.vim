@@ -25,7 +25,7 @@ call plug#begin('~/.config/nvim-plug/plugged')
     " ranger inside nvim
     Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
     " colorizer
-    "Plug 'norcalli/nvim-colorizer.lua'
+    " Plug 'norcalli/nvim-colorizer.lua'
     "commentary
     Plug 'tpope/vim-commentary'
     " startify
