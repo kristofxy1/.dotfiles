@@ -14,7 +14,6 @@
     ~/.zshenv: zsh/zshenv
     ~/.config/zsh/.zshrc: zsh/zshrc
     ~/.config/zsh/.p10k.zsh: zsh/p10k.zsh
-    ~/.config/zsh/.xmodmaprc: xmodmaprc
     ~/.config/zsh/.aliasrc: zsh/aliasrc
     ~/.config/zsh/zsh-syntax-highlighting: zsh/plugins/zsh-syntax-highlighting
     ~/.config/zsh/powerlevel10k: zsh/plugins/powerlevel10k
