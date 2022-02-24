@@ -44,8 +44,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # start program launcher
-bindsym Mod1+space exec --no-startup-d rofi -show combi
-bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons 
+bindsym Mod1+space exec --no-startup-id rofi -theme .config/i3/rofi/nord.rasi -show combi
+bindsym $mod+d exec --no-startup-id rofi -theme .config/i3/rofi/nord.rasi -show drun -show-icons
 
 # Printscreen
 set $print_path ~/Pictures/Screenshots
@@ -436,6 +436,6 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id compton -f 
 
 # wallpaper
-exec --no-startup-id feh --bg-fill ~/.config/i3/Wallpaper_nord_rocket.png
+exec --no-startup-id feh --bg-fill ~/.config/i3/Wallpapers/Wallpaper_nord_rocket.png
 #exec_always wal -i ~/.config/i3/Wallpaper_forest.jpeg
 

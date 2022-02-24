@@ -1,8 +1,6 @@
 ################################
-## Configuration for i3wm
-################################
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!  
-# Set mod key (Mod1=<Alt>, Mod4=<Super>) 
+## Configuration for i3wm ###############################
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!  Set mod key (Mod1=<Alt>, Mod4=<Super>) 
 set $mod Mod4 
 #set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
@@ -28,14 +26,13 @@ font pango: MesloLGS NF Regular
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec --no-startup-id alacritty 
 
 # start a terminal with tmux
-bindsym $mod+Shift+Return exec alacritty -e 'tmux'
+bindsym $mod+Shift+Return exec --no-startup-id alacritty -e tmux
 
 # lock & autolock
 bindsym $mod+Shift+x exec i3lock --color 475263
-exec --no-startup-id xautolock -time 10 -locker i3lock &
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -47,8 +44,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # start program launcher
-bindsym Mod1+space exec --no-startup-id rofi -show combi
-bindsym $mod+d exec --no-startup-id rofi -show drun  
+bindsym Mod1+space exec --no-startup-d rofi -theme .config/i3/rofi/nord.rasi -show combi
+bindsym $mod+d exec --no-startup-id rofi -theme .config/i3/rofi/nord.rasi -show drun 
 
 # Printscreen
 set $print_path ~/Pictures/Screenshots
@@ -267,6 +264,15 @@ bar {
     -m amixer cmus time date battery spacer \
     -p interval=0.1s time.format="%H:%M:%S" date.format="%d. %m." spacer.text="Krištof Bučar" \
     -t nord-powerline
+    colors {
+#         separator #268bd2
+        background #232830
+#         statusline #839496
+        focused_workspace #8ebbb9 #80a0c0 #e5e9f0
+        active_workspace #8ebbb9 #80a0c0 #e5e9f0
+        inactive_workspace #002b36 #919b9b #232830
+        urgent_workspace #be616b #be616b #f4f9ff
+    }
 }
 
 bar {
@@ -304,20 +310,33 @@ bar {
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # Set shut down, restart and locking features
+set $mode_system [l]ock, [e]xit, [r]eboot, [s]hutdown
 bindsym $mod+Escape mode "$mode_system"
-set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
-mode "$mode_system" {
-    bindsym l exec --no-startup-id i3lock --color 475263
-    bindsym s exec --no-startup-id systemctl suspend
-    bindsym u exec --no-startup-id exit i3
-    bindsym e exec --no-startup-id exit i3
-    bindsym h exec --no-startup-id systemctl suspend-then-hibernate
-    bindsym r exec --no-startup-id reboot
-    bindsym Shift+s exec --no-startup-id shutdown now
 
-    # exit system mode: "Enter" or "Escape"
-    bindsym Return mode "default"
+mode "[l]ock, [e]xit, [r]eboot, [s]hutdown" {
+
+  bindsym l exec i3lock --color 475263, mode "default"
+  bindsym e exec i3-msg exit, mode "default"
+  bindsym r mode "reboot: [y]es/[n]o"
+  bindsym s mode "shutdown: [y]es/[n]o"
+
+  bindsym Escape mode "default"
+  bindsym Return mode "default"
+}
+
+
+mode "reboot: [y]es/[n]o" {
+    bindsym y exec reboot, mode "default"
+    bindsym n mode "default"
     bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
+
+mode "shutdown: [y]es/[n]o" {
+    bindsym y exec shutdown now, mode "default"
+    bindsym n mode "default"
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
 }
 
 ################################
@@ -409,7 +428,7 @@ exec --no-startup-id setxkbmap -layout si
 #exec_always --no-startup-id ~/.spells/i3wm/natural_scroll.sh
 
 # Spiral layout
-exec_always --no-startup-id ~/.config/i3/alternating_layouts.py
+#exec_always --no-startup-id ~/.config/i3/alternating_layouts.py
 
 # others
 exec --no-startup-id xfce4-power-manager
@@ -417,6 +436,6 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id compton -f 
 
 # wallpaper
-#exec feh --bg-fill ~/.config/i3/Wallpaper_nord_rocket.png
+exec --no-startup-id feh --bg-fill ~/.config/i3/Wallpapers/Wallpaper_nord_rocket.png
 #exec_always wal -i ~/.config/i3/Wallpaper_forest.jpeg
 
