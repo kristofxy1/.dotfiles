@@ -249,16 +249,15 @@ bar {
 bar {
 # for adding output screen use xrandr
 # bar for big displays
-    output HDMI2
-    output DP2
-    output VGA-0
+    output eDP-1
     position top
-    font pango: MesloLGS NF Regular
+    font pango: MesloLGS NF Regular 13
     tray_output none
-    status_command ~/.config/i3/bumblebee-status/bumblebee-status \
-    -m amixer cmus time date battery spacer \
-    -p interval=0.1s time.format="%H:%M:%S" date.format="%d. %m." spacer.text="Krištof Bučar" \
-    -t nord-powerline
+    status_command i3status
+    # status_command ~/.config/i3/bumblebee-status/bumblebee-status \
+    # -m amixer cmus time date battery spacer \
+    # -p interval=0.1s time.format="%H:%M:%S" date.format="%d. %m." spacer.text="Krištof Bučar" \
+    # -t nord-powerline
     colors {
 #         separator #268bd2
         background #232830
