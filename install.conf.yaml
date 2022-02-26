@@ -21,11 +21,13 @@
 
 # other programs config
     ~/.config/nvim: old-nvim
-    ~/.tmux.conf: tmux.conf
     ~/help: help
     ~/.config/i3: i3
     ~/.config/alacritty: alacritty
     ~/.themes: themes
+    ~/.config/tmux: tmux
+    ~/.tmux.conf: tmux/tmux.conf
+
 
 
 - shell:

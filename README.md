@@ -38,4 +38,9 @@ sudo apt-get update
 ```sh
 sudo add-apt-repository ppa:aslatter/ppa
 ```
+## tmux
+- for plugin manager run
+```sh
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux-plugins/tpm
+```
 
