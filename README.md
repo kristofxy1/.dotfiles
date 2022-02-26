@@ -18,6 +18,11 @@
     - sudo apt-get install -y nodejs
 - for installing nvim module
     - npm install -g neovim
+- vim plug
+```sh
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```
 ## i3
 - to start just install i3
 - for walpaper install feh

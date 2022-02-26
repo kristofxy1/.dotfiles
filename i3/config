@@ -247,15 +247,27 @@ bar {
 }
 
 bar {
-# display for laptop change XYX
-    output XYX
+# for adding output screen use xrandr
+# bar for big displays
+    output HDMI2
+    output DP2
+    output VGA-0
     position top
     font pango: MesloLGS NF Regular
     tray_output none
     status_command ~/.config/i3/bumblebee-status/bumblebee-status \
-    -m brightness amixer cmus time date battery \
+    -m amixer cmus time date battery spacer \
     -p interval=0.1s time.format="%H:%M:%S" date.format="%d. %m." spacer.text="Krištof Bučar" \
     -t nord-powerline
+    colors {
+#         separator #268bd2
+        background #232830
+#         statusline #839496
+        focused_workspace #8ebbb9 #80a0c0 #e5e9f0
+        active_workspace #8ebbb9 #80a0c0 #e5e9f0
+        inactive_workspace #002b36 #919b9b #232830
+        urgent_workspace #be616b #be616b #f4f9ff
+    }
 }
 
 # bar {
@@ -426,7 +438,6 @@ exec --no-startup-id clipit
 exec --no-startup-id nitrogen --restore; sleep 1; picom -C -b
 
 # Keyboard Remaps
-# exec --no-startup-id numlockx 
 # exec --no-startup-id setxkbmap -option caps:escape
 #exec --no-startup-id setxkbmap -option ctrl:nocaps
 #exec --no-startup-id xcape -e 'Control_L=Escape'
@@ -454,6 +465,9 @@ exec --no-startup-id compton -f
 # wallpaper
 exec --no-startup-id feh --bg-fill ~/.config/i3/Wallpapers/Wallpaper_nord_rocket.png
 #exec_always wal -i ~/.config/i3/Wallpaper_forest.jpeg
+
+# turn off numlock
+exec --no-startup-id numlockx off
 
 ################################
 ## try

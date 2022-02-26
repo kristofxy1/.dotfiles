@@ -1,6 +1,6 @@
 # adding ppa
-sudo add-apt-repository ppa:regolith-linux/release
-sudo add-apt-repository ppa:aslatter/ppa
+# sudo add-apt-repository ppa:regolith-linux/release
+# sudo add-apt-repository ppa:aslatter/ppa
 
 # update repositorys
 sudo apt-get update
