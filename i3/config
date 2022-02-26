@@ -231,7 +231,7 @@ bar {
     position top
     font pango: MesloLGS NF Regular
     tray_output none
-    status_command ~/.config/i3/bumblebee-status/bumblebee-status \
+    status_command bumblebee-status \
     -m amixer cmus time date battery spacer \
     -p interval=0.1s time.format="%H:%M:%S" date.format="%d. %m." spacer.text="Krištof Bučar" \
     -t nord-powerline
@@ -254,7 +254,8 @@ bar {
     font pango: MesloLGS NF Regular 13
     tray_output none
     status_command i3status
-    # status_command ~/.config/i3/bumblebee-status/bumblebee-status \
+    ### for installing pip install bumblebee-status
+    # status_command bumblebee-status \
     # -m amixer cmus time date battery spacer \
     # -p interval=0.1s time.format="%H:%M:%S" date.format="%d. %m." spacer.text="Krištof Bučar" \
     # -t nord-powerline
