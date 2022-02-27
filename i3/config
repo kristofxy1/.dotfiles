@@ -2,8 +2,7 @@
 ## Configuration for i3wm ###############################
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!  Set mod key (Mod1=<Alt>, Mod4=<Super>) 
 set $mod Mod4 
-#set default desktop layout (default is tiling)
-# workspace_layout tabbed <stacking|tabbed>
+#set default desktop layout (default is tiling) workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 new_window pixel 1
@@ -222,6 +221,7 @@ for_window [urgent=latest] focus
 ## Bar configure
 ################################
 
+
 bar {
 # for adding output screen use xrandr
 # bar for big displays
@@ -230,6 +230,28 @@ bar {
     output VGA-0
     position top
     font pango: MesloLGS NF Regular
+    tray_output none
+    status_command bumblebee-status \
+    -m amixer cmus time date battery spacer \
+    -p interval=0.1s time.format="%H:%M:%S" date.format="%d. %m." spacer.text="Krištof Bučar" \
+    -t nord-powerline
+    colors {
+#         separator #268bd2
+        background #232830
+#         statusline #839496
+        focused_workspace #8ebbb9 #80a0c0 #e5e9f0
+        active_workspace #8ebbb9 #80a0c0 #e5e9f0
+        inactive_workspace #002b36 #919b9b #232830
+        urgent_workspace #be616b #be616b #f4f9ff
+    }
+}
+
+bar {
+# for adding output screen use xrandr
+# bar for big displays
+    output VGA-1
+    position top
+    font pango: MesloLGS NF Regular 10
     tray_output none
     status_command bumblebee-status \
     -m amixer cmus time date battery spacer \
@@ -443,6 +465,8 @@ exec --no-startup-id nitrogen --restore; sleep 1; picom -C -b
 #exec --no-startup-id xcape -e 'Control_L=Escape'
 exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id xcape -e 'Control_L=Escape' -t 175
+# swap alt and win keys keys
+exec --no-startup-id setxkbmap -option altwin:swap_lalt_lwin
 
 # slo keyboard layout
 exec --no-startup-id setxkbmap -layout si

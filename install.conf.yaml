@@ -24,9 +24,9 @@
     ~/help: help
     ~/.config/i3: i3
     ~/.config/alacritty: alacritty
-    ~/.themes: themes
     ~/.config/tmux: tmux
     ~/.tmux.conf: tmux/tmux.conf
+    ~/.config/rofi: rofi
 
 
 
