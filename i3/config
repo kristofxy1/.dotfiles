@@ -228,8 +228,9 @@ bar {
     output HDMI2
     output DP2
     output VGA-0
+    output DVI-0
     position top
-    font pango: MesloLGS NF Regular
+    font pango: MesloLGS NF Regular 10
     tray_output none
     status_command bumblebee-status \
     -m amixer cmus time date battery spacer \
@@ -487,7 +488,7 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id compton -f 
 
 # wallpaper
-exec --no-startup-id feh --bg-fill ~/.config/i3/Wallpapers/Wallpaper_nord_rocket.png
+exec --no-startup-id feh --bg-fill ~/.config/i3/Wallpapers/Wallpaper_nord_underwater.png
 #exec_always wal -i ~/.config/i3/Wallpaper_forest.jpeg
 
 # turn off numlock
