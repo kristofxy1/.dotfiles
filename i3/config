@@ -273,15 +273,16 @@ bar {
 # for adding output screen use xrandr
 # bar for big displays
     output eDP-1
+    output eDP1
     position top
     font pango: MesloLGS NF Regular 13
     tray_output none
-    status_command i3status
+    # status_command i3status
     ### for installing pip install bumblebee-status
-    # status_command bumblebee-status \
-    # -m amixer cmus time date battery spacer \
-    # -p interval=0.1s time.format="%H:%M:%S" date.format="%d. %m." spacer.text="Krištof Bučar" \
-    # -t nord-powerline
+    status_command bumblebee-status \
+    -m amixer cmus time date battery spacer \
+    -p interval=0.1s time.format="%H:%M:%S" date.format="%d. %m." spacer.text="Krištof Bučar" \
+    -t nord-powerline
     colors {
 #         separator #268bd2
         background #232830
@@ -467,7 +468,7 @@ exec --no-startup-id nitrogen --restore; sleep 1; picom -C -b
 exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id xcape -e 'Control_L=Escape' -t 175
 # swap alt and win keys keys
-exec --no-startup-id setxkbmap -option altwin:swap_lalt_lwin
+# exec --no-startup-id setxkbmap -option altwin:swap_lalt_lwin
 
 # slo keyboard layout
 exec --no-startup-id setxkbmap -layout si
