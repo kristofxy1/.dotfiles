@@ -37,7 +37,6 @@ alias token="pbcopy < ~/.token"
 alias wifi="nmtui"
 alias battery="acpi"
 alias audio="pavucontrol"
-alias sola='cd ~/Documents/sola'
 
 
 # alias for capslock remap
@@ -50,6 +49,10 @@ alias pbpaste='xclip -selection clipboard -o'
 # functions
 function help() {
     less ~/help/$1_help.txt
+}
+
+function sola() {
+    cd ~/Documents/sola/$1 
 }
 
 function brightness() {

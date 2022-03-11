@@ -40,5 +40,5 @@ nnoremap <Leader>o o<Esc>^Da
 nnoremap <Leader>O O<Esc>^Da
 
 " for python run and node run
+nnoremap <Leader>m :!python3 
 nnoremap <Leader>n :!node 
-nnoremap <Leader>p :!python3 
