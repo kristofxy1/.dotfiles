@@ -221,78 +221,32 @@ for_window [urgent=latest] focus
 ## Bar configure
 ################################
 
+exec --no-startup-id polybar
 
-bar {
-# for adding output screen use xrandr
-# bar for big displays
-    output HDMI2
-    output DP2
-    output VGA-0
-    output DVI-0
-    position top
-    font pango: MesloLGS NF Regular 10
-    tray_output none
-    status_command bumblebee-status \
-    -m amixer cmus time date battery spacer \
-    -p interval=0.1s time.format="%H:%M:%S" date.format="%d. %m." spacer.text="Krištof Bučar" \
-    -t nord-powerline
-    colors {
-#         separator #268bd2
-        background #232830
-#         statusline #839496
-        focused_workspace #8ebbb9 #80a0c0 #e5e9f0
-        active_workspace #8ebbb9 #80a0c0 #e5e9f0
-        inactive_workspace #002b36 #919b9b #232830
-        urgent_workspace #be616b #be616b #f4f9ff
-    }
-}
-
-bar {
-# for adding output screen use xrandr
-# bar for big displays
-    output VGA-1
-    position top
-    font pango: MesloLGS NF Regular 10
-    tray_output none
-    status_command bumblebee-status \
-    -m amixer cmus time date battery spacer \
-    -p interval=0.1s time.format="%H:%M:%S" date.format="%d. %m." spacer.text="Krištof Bučar" \
-    -t nord-powerline
-    colors {
-#         separator #268bd2
-        background #232830
-#         statusline #839496
-        focused_workspace #8ebbb9 #80a0c0 #e5e9f0
-        active_workspace #8ebbb9 #80a0c0 #e5e9f0
-        inactive_workspace #002b36 #919b9b #232830
-        urgent_workspace #be616b #be616b #f4f9ff
-    }
-}
-
-bar {
-# for adding output screen use xrandr
-# bar for big displays
-    output eDP-1
-    output eDP1
-    position top
-    font pango: MesloLGS NF Regular 13
-    tray_output none
-    # status_command i3status
-    ### for installing pip install bumblebee-status
-    status_command bumblebee-status \
-    -m amixer cmus time date battery spacer \
-    -p interval=0.1s time.format="%H:%M:%S" date.format="%d. %m." spacer.text="Krištof Bučar" \
-    -t nord-powerline
-    colors {
-#         separator #268bd2
-        background #232830
-#         statusline #839496
-        focused_workspace #8ebbb9 #80a0c0 #e5e9f0
-        active_workspace #8ebbb9 #80a0c0 #e5e9f0
-        inactive_workspace #002b36 #919b9b #232830
-        urgent_workspace #be616b #be616b #f4f9ff
-    }
-}
+# bar {
+# # for adding output screen use xrandr
+# # bar for big displays
+#     output eDP-1
+#     output eDP1
+#     position top
+#     font pango: MesloLGS NF Regular 13
+#     tray_output none
+#     # status_command i3status
+# #     ### for installing pip install bumblebee-status
+#     status_command bumblebee-status \
+#     -m amixer cmus time date battery spacer \
+#     -p interval=0.1s time.format="%H:%M:%S" date.format="%d. %m." spacer.text="Krištof Bučar" \
+#     -t nord-powerline
+#     colors {
+# #         separator #268bd2
+#         background #232830
+# #         statusline #839496
+#         focused_workspace #8ebbb9 #80a0c0 #e5e9f0
+#         active_workspace #8ebbb9 #80a0c0 #e5e9f0
+#         inactive_workspace #002b36 #919b9b #232830
+#         urgent_workspace #be616b #be616b #f4f9ff
+#     }
+# }
 
 # bar {
 #     status_command i3status
