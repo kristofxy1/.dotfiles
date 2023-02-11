@@ -1,4 +1,4 @@
-require("start/bindings")
-require("start/packer")
-require("start/general")
+require("bindings")
+require("packersetup")
+require("general")
 
