@@ -317,7 +317,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # Set shut down, restart and locking features
 set $mode_system [l]ock, [e]xit, [r]eboot, [s]hutdown
-bindsym $mod+Escape mode "$mode_system"
+bindsym $mod+Escape exec rofi -show power-menu -modi power-menu:~/.config/i3/scripts/rofi-power-menu
 
 mode "[l]ock, [e]xit, [r]eboot, [s]hutdown" {
 
