@@ -20,7 +20,7 @@
     ~/.config/zsh/oh-my-zsh: zsh/plugins/oh-my-zsh
 
 # other programs config
-    ~/.config/nvim: old-nvim
+    ~/.config/nvim: nvim
     ~/help: help
     ~/.config/i3: i3
     ~/.config/alacritty: alacritty
