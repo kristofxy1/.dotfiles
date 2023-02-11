@@ -27,6 +27,7 @@
     ~/.config/tmux: tmux
     ~/.tmux.conf: tmux/tmux.conf
     ~/.config/rofi: rofi
+    ~/.config/polybar: polybar
 
 
 
