@@ -21,6 +21,7 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use 'jiangmiao/auto-pairs'
   use('mbbill/undotree')
+  use "ThePrimeagen/vim-be-good"
   use {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v1.x',

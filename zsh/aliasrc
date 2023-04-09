@@ -60,3 +60,7 @@ function brightness() {
     brightnessctl -d "intel_backlight" set $1
 }
 
+function mkcd() {
+   mkdir $1
+   cd $1
+}

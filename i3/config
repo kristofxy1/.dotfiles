@@ -43,7 +43,7 @@ bindsym $mod+d exec --no-startup-id rofi -theme .config/i3/rofi/nord.rasi -show 
 # Printscreen
 set $print_path ~/Pictures/Screenshots
 bindsym Print                      exec --no-startup-id flameshot gui -p $print_path
-bindsym $mod+Shift+Print --release exec --no-startup-id flameshot full -c -p $print_path
+bindsym $mod+Shift+Print --release exec --no-startup-id scrot $print_path
 
 ################################
 ## app starting keybindings
@@ -221,7 +221,10 @@ for_window [urgent=latest] focus
 ## Bar configure
 ################################
 
+exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
 exec --no-startup-id polybar
+
 
 # bar {
 # # for adding output screen use xrandr
@@ -350,8 +353,8 @@ mode "shutdown: [y]es/[n]o" {
 ################################
 
 # Set inner/outer gaps
-gaps inner 10
-gaps outer 10
+gaps inner 7
+gaps outer 5
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -414,6 +417,8 @@ exec --no-startup-id redshift -l 41:-8 -t 5700:3600
 exec --no-startup-id clipit
 
 exec --no-startup-id nitrogen --restore; sleep 1; picom -C -b
+
+exec --no-startup-id timeshift-gtk
 
 # Keyboard Remaps
 # exec --no-startup-id setxkbmap -option caps:escape

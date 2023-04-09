@@ -2,6 +2,8 @@
 # xmodmap ~/.config/zsh/.xmodmaprc
 # xcape -e '#66=Escape'
 
+export PATH=/home/david/pear/bin:$PATH
+
 setxkbmap -option ctrl:nocaps
 xcape -e 'Control_L=Escape' -t 175
 
